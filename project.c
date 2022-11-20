@@ -121,6 +121,81 @@ char* convert_from_decimal( char *res , int base , int inputNum ){
     return res ;
 }
 
+/*
+Function 7
+This function will multiply two numbers
+of any base
+*/
+void multiplier( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 * num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 8
+This function will divide two numbers
+of any base
+*/
+void divide( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 / num_2 ;
+
+    char new_string[100] ;
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 9
+This function will add two numbers
+of any base
+*/
+void addition( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 + num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 10
+This function will subtract two numbers
+of any base
+*/
+void subtraction( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 - num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
 
 int main(){
 
@@ -153,6 +228,49 @@ int main(){
 
             printf("The equivalent of %s in the base %d is %s " , string_of_digits , final_base , string_of_result );
             break ;
+
+        case 2:
+            
+            printf("Enter the base of numbers \n") ;
+            scanf( "%d" , &initial_base ) ;
+            printf("Enter the numbers \n") ;
+            scanf( "%s%s" , string_1 , string_2 ) ;
+
+            multiplier( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 3:
+
+            printf( "Enter the base of numbers \n ") ;
+            scanf("%d" , &initial_base ) ;
+            printf("Enter the divident \n" ) ;
+            scanf("%s" , string_1 ) ;
+            printf("Enter the divisor \n" ) ;
+            scanf("%s" , string_2 ) ;
+
+            divide( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 4:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the numbers \n " ) ;
+            scanf("%s%s" , string_1 , string_2 ) ;
+
+            addition( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 5:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the numbers \n " ) ; 
+            scanf("%s%s" , string_1 , string_2 ) ;
+
+            subtraction( string_1 , string_2 , initial_base ) ;
+            break ;
+        
     }
 
     return 0 ;
