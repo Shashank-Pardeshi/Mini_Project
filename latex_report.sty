@@ -1,0 +1,579 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{changepage}
+\usepackage{fullpage}
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{ulem}
+\usepackage{lineno}
+\usepackage{ragged2e}
+\usepackage{parskip}
+\usepackage{indentfirst}
+\usepackage{listings}
+
+\begin{titlepage}
+
+\begin{center}
+% Upper part of the page
+
+\textsc{\textbf{\LARGE Department of Computer Science}}\\[1.5cm]
+\textsc{\Large CO24497 - Programming Practices}\\[0.5cm]
+\vspace{20pt}
+
+{ \huge \bfseries MINI PROJECT}\\
+\vspace{50pt}
+
+\large
+\emph{\textbf{\LARGE Author:}}\\
+\vspace{20pt}
+\textbf{\LARGE Shashank Pardeshi}\\
+\vspace{20pt}
+\textbf{\LARGE Enrolment Number : 0801CS211077}\\
+\vspace{40pt}
+
+
+\textbf{{\large Date : 21-11-2022}}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+
+\begin{document}  
+
+\tableofcontents
+\newpage
+
+\part{INFORMATION ABOUT PROJECT}
+\vspace{40pt}
+
+\section{$\bullet$\hspace{3mm}\textbf{\Large Objective }}\\[\baselineskip\]
+
+\textrm{\LARGE  This project is  }
+\vspace{50pt}
+
+\begin{flushleft}
+
+
+\section{$\bullet$\hspace{3mm}\textbf{\Large Statistics }}\\[\baselineskip\]
+
+\vspace{20pt}
+
+$\bullet$\hspace{3mm}\textrm{\Large{Start date : 18-11-22}}\\[\baselineskip]
+
+$\bullet$\hspace{3mm}\textrm{\Large{Finish date : 21-11-22}}\\[\baselineskip]
+ 
+$\bullet$\hspace{3mm}\textrm{\Large{total number of functions in the program : 13}}\\[\baselineskip]
+
+$\bullet$\hspace{3mm}\textrm{\Large{total lines of code in the program : 304}}\\[\baselineskip]
+  
+\end{flushleft}
+\newpage
+
+\part{\textbf{DESCRIPTION OF THE FUNCTIONS}}
+\vspace{30pt}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-1}}\\[\baselineskip\]
+
+\textbf{\Large Function name : user\_guide}
+
+\paragraph{\Large \hspace{20pt} This function is used to print the user manual. It will tell the user which number should he/she enter to perform which operations.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-2}}\\[\baselineskip\]
+\textbf{\Large Function name : value\_of\_character}
+
+\paragraph{\Large \hspace{20pt} This function is used to get the numerical value associated with the alphabets of number with the base greater than 10. This function takes a character as argument and  check whether it is a number or a alphabet. If it is a number the function will return that numbers as it is but if the character is a alphabet the function will return the value associated with that alphabet.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-3}}\\[\baselineskip\]
+
+\textbf{\Large Function name : convert\_to\_decimal}
+
+\paragraph{\Large \hspace{20pt} This function will be used to convert a number in any base to a decimal number.}
+
+\paragraph{\Large \hspace{20pt} This function takes a string of characters and a integer value as arguments. The string of character that the function is receiving is the number which has to converted into its decimal equivalent form. The other argument is used to tell the function the base of the number which has to converted to decimal. }
+
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-4}}\\[\baselineskip\]
+
+\textbf{\Large Function name : return\_character}
+
+\paragraph{\Large \hspace{20pt} This function is used to get the character which is associated with a numerical value in the number system. This function takes a integer value as argument and returns the  character associated with that numerical value.}
+
+\newpage
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-5}}\\[\baselineskip\]
+
+\textbf{\Large Function name : reverse\_string}
+
+\paragraph{\Large \hspace{20pt} This function is a helper function which is used to reverse any string. This function takes a string and returns the reverse of that string.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-6}}\\[\baselineskip\]
+
+\textbf{\Large Function name : convert\_from\_decimal}
+
+\paragraph{\Large \hspace{20pt} This function is used to convert a decimal number to a number of any base. This function takes three variables as arguments, one string which is used to store the the final result of the function and two integers, one to receive the number to be converted and other to receive the base to which the given number has to be converted. }
+\paragraph{\Large \hspace{20pt} This function takes help of return_character function to get the characters associated with the integer value and store them in a string and finally returns that string to the calling function.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-7}}\\[\baselineskip\]
+
+\textbf{\Large Function name : multiplier}
+
+\paragraph{\Large \hspace{20pt} This function is used to do the multiplication of two numbers of any base. It takes a total of three inputs. Two strings of character and a integer.}
+
+\paragraph{\Large \hspace{20pt} It first converts the two numbers given to it as string to the decimal numbers (using function number 3) and then do the multiplication of those two decimal numbers and then convert the result of the multiplication to the actual base of the numbers (using function number 6). }
+
+\newpage
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-8}}\\[\baselineskip\]
+
+\textbf{\Large Function name : divide}
+
+\paragraph{\Large\hspace{20pt} This function do the division of two numbers of any base. It also works the same way as the multiplier function works. Takes three inputs, two number to do the division and a integer to know the base of those numbers.
+This function also converts the two numbers to decimal and then do the division and convert them back their original base.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-9}}\\[\baselineskip\]
+
+\textbf{\Large Function name : addition}
+
+\paragraph{\Large \hspace{20pt} This function is used to do the addition of two numbers. It takes two numbers and then converts them to decimal. Then it do their addition and then convert them back to their original base. It calls the convert\_to\_decimal function twice and convert\_from\_decimal once to complete its task.}
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-10}}\\[\baselineskip\]
+
+\textbf{\Large Function name : subtraction}
+
+\paragraph{\Large \hspace{20pt} This function is used to do the  subtraction of two numbers of some base. It is similar to the function "addition", the only difference is this function do the subtraction of numbers instead of addition. }
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-11}}\\[\baselineskip\]
+
+\textbf{\Large Function name : complement}
+
+\paragraph{\Large \hspace{20pt} This function prints the complement of any number. It takes a string of character and a integer value as arguments. It subtract each digit of the number given to this function and store the difference to the string and then uses the function "return\_character" to print the complement of the given number. It uses a for loop to print the elements of the string without any spaces between them so that they appear as a single number.}
+
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-12}}\\
+
+\textbf{\Large Function name : value\_of\_power}
+
+\paragraph{\Large \hspace{20pt} This function is used to evaluate the value of any number of any base raised to some power. It first converts the number given to it as argument to decimal number and then raise that decimal number to given power and then convert the result to the base of the given number. }
+
+\section*{$\bullet$\hspace{3mm}\textbf{\LARGE Function-13}}\\[\baselineskip\]
+
+\textbf{\Large Function name : modulo\_finder}
+
+\paragraph{\Large \hspace{20pt} This function is used to find the remainder that is left when we divide a number to another number. }
+
+\newpage
+
+
+\part{\textbf{CODE OF THE PROJECT}}
+
+\begin{lstlisting}
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+/*
+ Funtion 1
+ This function will print the 
+ user guide which will help the user
+ */
+void user_guide(){
+ printf( "\n" ) ; 
+printf( "Enter 1 : to convert a number in one base to any other base \n" ) ;
+printf( "Enter 2 : to multiply two numbers of any base \n" ) ;
+printf( "Enter 3 : to divide two numbers of any base \n" ) ; 
+printf( "Enter 4 : to add two numbers of any base \n" ) ;
+printf( "Enter 5 : to subtract two numbers of any base \n" ) ;
+printf( "Enter 6 : to find the complement of the number in any base \n" ) ;
+printf( "Enter 7 : to find the value of any number in any base raised to some power \n" ) ;
+printf( "Enter 8 : to find the modulo of any division \n" ) ;
+}
+
+/*
+Funtion 2
+This function will return the numerical
+value of the character received 
+by the function
+*/
+int value_of_character (char c){
+    if ( c >= '0' && c <= '9' ){
+        return (int)c - '0' ;
+    } else if ( c >= 'a' && c <= 'z' ){
+        return (int)c - 'a' + 10 ;
+    } else{
+        return (int)c - 'A' + 10 ;
+    }
+}
+ 
+/*
+Funtion 3
+This function will convert a number 
+from any base to decimal
+*/
+int convert_to_decimal ( char *str , int base ){
+    int len = strlen( str ) ;
+    int power = 1 ;           
+    int to_decimal = 0 ;  
+ 
+   
+    for (int i = len - 1 ; i >= 0 ; i--){
+
+        if (value_of_character(str[i]) >= base){
+           printf( "Invalid Number" ) ;
+           return -1 ;
+        }
+ 
+        to_decimal += value_of_character(str[i]) * power ;
+        power = power * base ;
+    }
+
+    return to_decimal ;
+}
+
+/*
+Function 4
+This function will return the
+the character associated with the 
+number received by it
+*/
+char return_character(int num){
+    if ( num >= 0 && num <= 9 ){
+        return (char)( num + '0' ) ;
+    } else if ( num >= 'a' && num <= 'z' ){
+        return (char)( num - 10 + 'a' ) ;
+    } else{
+        return (char)( num - 10 + 'A' ) ;
+    }
+}
+
+/*
+Function 5
+This function will reverse an array
+*/
+void reverse_string( char *str ){
+
+    int len = strlen( str ) ;
+
+    for ( int i = 0; i < len/2; i++ ){
+        char temp = str[i] ;
+        str[i] = str[len-i-1] ;
+        str[len-i-1] = temp ;
+    }
+}
+
+/*
+function 6
+This function will convert any number
+from decimal to any base 
+*/
+char* convert_from_decimal( char *res , int base , int inputNum ){
+    int index = 0 ;  // Initialize index of result
+ 
+    while ( inputNum > 0 ){
+        res[index] = return_character( inputNum % base ) ;
+        inputNum /= base ;
+        index++ ;
+    }
+ 
+    res[index] = '\0' ;
+
+    // Reverse the result
+    reverse_string(res) ;
+ 
+    return res ;
+}
+
+/*
+Function 7
+This function will multiply two numbers
+of any base
+*/
+void multiplier( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 * num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 8
+This function will divide two numbers
+of any base
+*/
+void divide( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 / num_2 ;
+
+    char new_string[100] ;
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 9
+This function will add two numbers
+of any base
+*/
+void addition( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 + num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+Function 10
+This function will subtract two numbers
+of any base
+*/
+void subtraction( char* x , char* y , int base ){
+
+    int num_1 = convert_to_decimal( x , base ) ;
+    int num_2 = convert_to_decimal( y , base ) ;
+
+    int result = num_1 - num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+
+}
+
+/*
+function 11
+This function will return the complement
+of any number in any base
+*/
+void complement( char *str , int base ){
+    int len = strlen(str) ;
+    int result_string[len] ; 
+    for ( int i = len - 1 ; i >= 0 ; i-- ){
+        result_string[i] = ( base - 1 ) - value_of_character(str[i]) ;
+        result_string[i] = return_character( result_string[i] ) ;
+    }
+
+    for ( int i = 0 ; i < len ; i++ ){
+        printf( "%c" , result_string[i] ) ;
+    }
+    printf( "\n" ) ; 
+}
+ 
+/*
+Function 12
+This function will evaluate the value
+of any number raised to some power
+*/
+void value_of_power( char *str , int power , int base ){
+    
+    int decimal = convert_to_decimal( str , base ) ;
+    decimal = pow( decimal , power ) ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , decimal ) ;
+
+    printf( "The result is : %s \n" , new_string ) ;
+}
+
+/*
+Function 13
+This function will find the modulo of 
+any division
+*/
+void modulo_finder( char *str_1 , char *str_2 , int base ){
+    int num_1 = convert_to_decimal( str_1 , base ) ;
+    int num_2 = convert_to_decimal( str_2 , base ) ;
+
+    int result = num_1 % num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+}
+
+
+
+int main(){
+
+    char string_of_digits[100] ;
+    char string_of_result[100] ;
+    char string_1[100] ;
+    char string_2[100] ;
+    int initial_base ;
+    int final_base ;
+    int selector ;
+    int num_1 ;
+
+    user_guide() ;
+
+    scanf("%d" , &selector) ;
+
+    switch(selector){
+        case 1:
+
+        printf("Enter the number to convert \n");
+        scanf("%s", string_of_digits);
+        printf("Enter the base of the number \n");
+        scanf("%d", &initial_base);
+        printf("Enter the base to which you want to convet the number in \n");
+        scanf("%d", &final_base);
+
+        int decimal_value = convert_to_decimal(string_of_digits , initial_base);
+
+        convert_from_decimal( string_of_result , final_base , decimal_value);
+
+        printf("The equivalent of %s in the base %d is %s " , string_of_digits , final_base , string_of_result );
+        break ;
+
+        case 2:
+            
+            printf("Enter the base of numbers \n") ;
+            scanf( "%d" , &initial_base ) ;
+            printf("Enter the numbers \n") ;
+            scanf( "%s%s" , string_1 , string_2 ) ;
+
+            multiplier( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 3:
+
+            printf( "Enter the base of numbers \n ") ;
+            scanf("%d" , &initial_base ) ;
+            printf("Enter the divident \n" ) ;
+            scanf("%s" , string_1 ) ;
+            printf("Enter the divisor \n" ) ;
+            scanf("%s" , string_2 ) ;
+
+            divide( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 4:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the numbers \n " ) ;
+            scanf("%s%s" , string_1 , string_2 ) ;
+
+            addition( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 5:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the numbers \n " ) ; 
+            scanf("%s%s" , string_1 , string_2 ) ;
+
+            subtraction( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        case 6:
+            
+            printf( "Enter the base of the number \n " ) ;
+            scanf( "%d" , &initial_base ) ;
+            printf( "Enter the number \n " ) ;
+            scanf( "%s" , string_1 ) ;
+
+            complement( string_1 , initial_base ) ;
+            break ;
+
+        case 7:
+
+            printf( "Enter the base of the number \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the number \n " ) ;
+            scanf( "%s" , string_1 ) ;
+            printf( "Enter the power to which you want to raise the number to \n " ) ;
+            scanf("%d" , &num_1 ) ;
+
+            value_of_power( string_1 , num_1 , initial_base ) ;
+            break ;
+        
+        case 8:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf("Enter the divident \n " ) ;
+            scanf("%s" , string_1 ) ;
+            printf( "Enter the divisor \n " ) ;
+            scanf("%s" , string_2 ) ;
+
+            modulo_finder( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        default :
+
+            printf("You entered incorrect number \n " ) ;
+    }
+
+    return 0 ;
+}
+    
+\end{lstlisting}
+
+
+\part{\textbf{PROFILING OF THE PROGRAM}}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm]{pro1.png}
+    \includegraphics[width=12cm]{pro2.png}
+    \label{fig:my_label}
+\end{figure}
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm]{pro4.png}
+    \includegraphics[width=12cm]{pro5.png}
+    \label{fig:my_label}
+\end{figure}
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=13cm]{pro6.png}
+    \includegraphics[width=13cm]{pro7.png}
+    \label{fig:my_label}
+\end{figure}
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=13cm]{pro8.png}
+    \includegraphics[width=13cm]{pro9.png}
+    \label{fig:my_label}
+\end{figure}
+\newpage
+
+\part{\textbf{DEBUGGING OF THE PROGRAM}}}
+\vspace{30pt}
+
+\end{document}
