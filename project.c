@@ -128,7 +128,7 @@ void multiplier( char* x , char* y , int base ){
     char new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The result is : %s \n" , new_string ) ;
+    printf( "The multiplication of the two given numbers is : %s \n" , new_string ) ;
 
 }
 
@@ -146,7 +146,7 @@ void divide( char* x , char* y , int base ){
 
     char new_string[100] ;
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The result is : %s \n" , new_string ) ;
+    printf( "The division of the two given numbers is : %s \n" , new_string ) ;
 
 }
 
@@ -165,7 +165,7 @@ void addition( char* x , char* y , int base ){
     char new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The result is : %s \n" , new_string ) ;
+    printf( "The addition of the given two numbers is : %s \n" , new_string ) ;
 
 }
 
@@ -184,7 +184,7 @@ void subtraction( char* x , char* y , int base ){
     char new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The result is : %s \n" , new_string ) ;
+    printf( "The subtraction of the given two numbers is : %s \n" , new_string ) ;
 
 }
 
@@ -201,6 +201,7 @@ void complement( char *str , int base ){
         result_string[i] = return_character( result_string[i] ) ;
     }
 
+    printf("The complement of the given number is : " ) ;
     for ( int i = 0 ; i < len ; i++ ){
         printf( "%c" , result_string[i] ) ;
     }
