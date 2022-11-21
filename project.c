@@ -17,9 +17,6 @@ void user_guide(){
     printf( "Enter 6 : to find the complement of the number in any base \n" ) ;
     printf( "Enter 7 : to find the value of any number in any base raised to some power \n" ) ;
     printf( "Enter 8 : to find the modulo of any division \n" ) ;
-    printf( "Enter 9 : \n" ) ;
-    printf( "Enter 10 : \n" ) ;
-
 }
 
 /*
@@ -45,14 +42,11 @@ from any base to decimal
 */
 int convert_to_decimal ( char *str , int base ){
     int len = strlen( str ) ;
-    int power = 1 ; // Initialize power of base
-    int to_decimal = 0 ;  // Initialize result
+    int power = 1 ;           
+    int to_decimal = 0 ;  
  
-    // Decimal equivalent is str[len-1]*1 +
-    // str[len-2]*base + str[len-3]*(base^2) + ...
+   
     for (int i = len - 1 ; i >= 0 ; i--){
-        // A digit in input number must be
-        // less than number's base
 
         if (value_of_character(str[i]) >= base){
            printf( "Invalid Number" ) ;
@@ -105,8 +99,6 @@ from decimal to any base
 char* convert_from_decimal( char *res , int base , int inputNum ){
     int index = 0 ;  // Initialize index of result
  
-    // Convert input number is given base by repeatedly
-    // dividing it by base and taking remainder
     while ( inputNum > 0 ){
         res[index] = return_character( inputNum % base ) ;
         inputNum /= base ;
@@ -196,6 +188,60 @@ void subtraction( char* x , char* y , int base ){
 
 }
 
+/*
+function 11
+This function will return the complement
+of any number in any base
+*/
+void complement( char *str , int base ){
+    int len = strlen(str) ;
+    int result_string[len] ; 
+    for ( int i = len - 1 ; i >= 0 ; i-- ){
+        result_string[i] = ( base - 1 ) - value_of_character(str[i]) ;
+        result_string[i] = return_character( result_string[i] ) ;
+    }
+
+    for ( int i = 0 ; i < len ; i++ ){
+        printf( "%c" , result_string[i] ) ;
+    }
+    printf( "\n" ) ; 
+}
+ 
+/*
+Function 12
+This function will evaluate the value
+of any number raised to some power
+*/
+void value_of_power( char *str , int power , int base ){
+    
+    int decimal = convert_to_decimal( str , base ) ;
+    decimal = pow( decimal , power ) ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , decimal ) ;
+
+    printf( "The result is : %s \n" , new_string ) ;
+}
+
+/*
+Function 13
+This function will find the modulo of 
+any division
+*/
+void modulo_finder( char *str_1 , char *str_2 , int base ){
+    int num_1 = convert_to_decimal( str_1 , base ) ;
+    int num_2 = convert_to_decimal( str_2 , base ) ;
+
+    int result = num_1 % num_2 ;
+
+    char new_string[100] ;
+
+    convert_from_decimal( new_string , base , result ) ;
+    printf( "The result is : %s \n" , new_string ) ;
+}
+
+
 
 int main(){
 
@@ -270,7 +316,44 @@ int main(){
 
             subtraction( string_1 , string_2 , initial_base ) ;
             break ;
+
+        case 6:
+            
+            printf( "Enter the base of the number \n " ) ;
+            scanf( "%d" , &initial_base ) ;
+            printf( "Enter the number \n " ) ;
+            scanf( "%s" , string_1 ) ;
+
+            complement( string_1 , initial_base ) ;
+            break ;
+
+        case 7:
+
+            printf( "Enter the base of the number \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf( "Enter the number \n " ) ;
+            scanf( "%s" , string_1 ) ;
+            printf( "Enter the power to which you want to raise the number to \n " ) ;
+            scanf("%d" , &num_1 ) ;
+
+            value_of_power( string_1 , num_1 , initial_base ) ;
+            break ;
         
+        case 8:
+
+            printf( "Enter the base of numbers \n " ) ;
+            scanf("%d" , &initial_base ) ;
+            printf("Enter the divident \n " ) ;
+            scanf("%s" , string_1 ) ;
+            printf( "Enter the divisor \n " ) ;
+            scanf("%s" , string_2 ) ;
+
+            modulo_finder( string_1 , string_2 , initial_base ) ;
+            break ;
+
+        default :
+
+            printf("You entered incorrect number \n " ) ;
     }
 
     return 0 ;
