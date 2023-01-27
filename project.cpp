@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
+#include <iostream>
+#include <cstring>
+using namespace std;
 
 /*
  Funtion 1
@@ -9,14 +9,14 @@
  */
 void user_guide(){
     printf( "\n" ) ; 
-    printf( "Enter 1 : to convert a number in one base to any other base \n" ) ;
-    printf( "Enter 2 : to multiply two numbers of any base \n" ) ;
-    printf( "Enter 3 : to divide two numbers of any base \n" ) ; 
-    printf( "Enter 4 : to add two numbers of any base \n" ) ;
-    printf( "Enter 5 : to subtract two numbers of any base \n" ) ;
-    printf( "Enter 6 : to find the complement of the number in any base \n" ) ;
-    printf( "Enter 7 : to find the value of any number in any base raised to some power \n" ) ;
-    printf( "Enter 8 : to find the modulo of any division \n" ) ;
+    cout<< "Enter 1 : to convert a number in one base to any other base " <<endl ;
+    cout<< "Enter 2 : to multiply two numbers of any base " <<endl ;
+    cout<< "Enter 3 : to divide two numbers of any base " <<endl ; 
+    cout<< "Enter 4 : to add two numbers of any base "<<endl ;
+    cout<< "Enter 5 : to subtract two numbers of any base " <<endl ;
+    cout<< "Enter 6 : to find the complement of the number in any base " <<endl; ;
+    cout<< "Enter 7 : to find the value of any number in any base raised to some power "<<endl ;
+    cout<< "Enter 8 : to find the modulo of any division " << endl ;
 }
 
 /*
@@ -40,7 +40,7 @@ Funtion 3
 This function will convert a number 
 from any base to decimal
 */
-int convert_to_decimal ( char *str , int base ){
+int convert_to_decimal ( string *str , int base ){
     int len = strlen( str ) ;
     int power = 1 ;           
     int to_decimal = 0 ;  
@@ -80,7 +80,7 @@ char return_character(int num){
 Function 5
 This function will reverse an array
 */
-void reverse_string( char *str ){
+void reverse_string( string *str ){
 
     int len = strlen( str ) ;
 
@@ -96,7 +96,7 @@ function 6
 This function will convert any number
 from decimal to any base 
 */
-char* convert_from_decimal( char *res , int base , int inputNum ){
+char* convert_from_decimal( string *res , int base , int inputNum ){
     int index = 0 ;  // Initialize index of result
  
     while ( inputNum > 0 ){
@@ -118,17 +118,17 @@ Function 7
 This function will multiply two numbers
 of any base
 */
-void multiplier( char* x , char* y , int base ){
+void multiplier( string* x , char* y , int base ){
 
     int num_1 = convert_to_decimal( x , base ) ;
     int num_2 = convert_to_decimal( y , base ) ;
 
     int result = num_1 * num_2 ;
 
-    char new_string[100] ;
+    string new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The multiplication of the two given numbers is : %s \n" , new_string ) ;
+    cout<<"The multiplication of the two given numbers is : "<< new_string << endl;
 
 }
 
@@ -137,16 +137,16 @@ Function 8
 This function will divide two numbers
 of any base
 */
-void divide( char* x , char* y , int base ){
+void divide( string* x , string* y , int base ){
 
     int num_1 = convert_to_decimal( x , base ) ;
     int num_2 = convert_to_decimal( y , base ) ;
 
     int result = num_1 / num_2 ;
 
-    char new_string[100] ;
+    string new_string[100] ;
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The division of the two given numbers is : %s \n" , new_string ) ;
+    cout<< "The division of the two given numbers is : " << new_string <<endl ;
 
 }
 
@@ -155,17 +155,17 @@ Function 9
 This function will add two numbers
 of any base
 */
-void addition( char* x , char* y , int base ){
+void addition( string* x , string* y , int base ){
 
     int num_1 = convert_to_decimal( x , base ) ;
     int num_2 = convert_to_decimal( y , base ) ;
 
     int result = num_1 + num_2 ;
 
-    char new_string[100] ;
+    string new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The addition of the given two numbers is : %s \n" , new_string ) ;
+    cout<< "The addition of the given two numbers is :  " << new_string <<endl ;
 
 }
 
@@ -174,17 +174,17 @@ Function 10
 This function will subtract two numbers
 of any base
 */
-void subtraction( char* x , char* y , int base ){
+void subtraction( string* x , string* y , int base ){
 
     int num_1 = convert_to_decimal( x , base ) ;
     int num_2 = convert_to_decimal( y , base ) ;
 
     int result = num_1 - num_2 ;
 
-    char new_string[100] ;
+    string new_string[100] ;
 
     convert_from_decimal( new_string , base , result ) ;
-    printf( "The subtraction of the given two numbers is : %s \n" , new_string ) ;
+    cout<< "The subtraction of the given two numbers is : " << new_string <<endl ;
 
 }
 
@@ -193,7 +193,7 @@ function 11
 This function will return the complement
 of any number in any base
 */
-void complement( char *str , int base ){
+void complement( string *str , int base ){
     int len = strlen(str) ;
     int result_string[len] ; 
     for ( int i = len - 1 ; i >= 0 ; i-- ){
@@ -352,8 +352,8 @@ int main(){
             modulo_finder( string_1 , string_2 , initial_base ) ;
             break ;
 
-        
-        default:
+        default :
+
             printf("You entered incorrect number \n " ) ;
     }
 
